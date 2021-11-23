@@ -12,4 +12,5 @@ export class ShoppingCartHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }
