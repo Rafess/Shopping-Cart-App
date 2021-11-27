@@ -1,3 +1,8 @@
 <section class="main-section">
-    <p> OS ITENS A VENDA APARECERÃO AQUI</p>
+    <app-item-resume
+      *ngFor="let item of itemList"
+      [name]="item.name"
+      [price]="item.price"
+      [description]="item.description"
+    ></app-item-resume>
 </section>

@@ -1,3 +1,5 @@
+import { IItem } from './../models/interface';
+import { ItemsService } from './../items.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-cart-wrapper.component.css']
 })
 export class ShoppingCartWrapperComponent implements OnInit {
+  itemList: IItem[] = [];
+  constructor(private itemService: ItemsService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.itemService.initializeLit();
+    this.itemList = this.itemService.itemList;
   }
 
 }
