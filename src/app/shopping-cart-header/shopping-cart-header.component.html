@@ -10,13 +10,12 @@
             <a class="secondary nav-items" href="#"> MARCAS </a>
             <a class="secondary nav-items" href="#"> COLEÇÕES </a>
         </nav> 
-        <!-- esse NAV precisa ser um novo componente -->
         <div class="right-side-menu">
             <div class="glass-division">
-                <input type="text" name="searchbar" id="searchbar" class="searchbar"placeholder="Procurar"/>
+                <input [ngModel]="filter" (ngModelChange)="onFilterChange($event)" type="text" name="searchbar" id="searchbar" class="searchbar"placeholder="Procurar"/>
             </div>
             <a href="#"><img class="wish-list-icon" src="../../assets/images/heart-straight-thin.png" alt="wish-list"/></a>
-            <a href="#"><img class="shopping-cart-icon" src="../../assets/images/shopping-cart-thin.png" alt="shopping-cart"></a>
+            <a routerLink="/cart"><img class="shopping-cart-icon" src="../../assets/images/shopping-cart-thin.png" alt="shopping-cart"></a>
         </div>
     </div>    
 </header>

@@ -9,12 +9,12 @@ import { ShoppingCartWrapperComponent } from './shopping-cart-wrapper/shopping-c
 import { ShoppingCartFooterComponent } from './shopping-cart-footer/shopping-cart-footer.component';
 import { FormsModule } from '@angular/forms';
 import { ItemResumeComponent } from './shopping-cart-wrapper/item-resume/item-resume.component';
-import { ItemCreatorComponent } from './item-creator/item-creator.component';
+import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
   // Para cada rota, especificamos um componente
-  { path: 'home', component: ShoppingCartWrapperComponent },
+  { path: 'home', component: HomeComponent },
   // Pagina/Componente dos detalhes da tarefa.
-  // { path: 'item/:id', component: TodoDetailComponent },
+  { path: 'cart', component: ShoppingCartWrapperComponent },
   // { path: 'cart', component: TodoEditComponent },
 ];
 
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
     ShoppingCartWrapperComponent,
     ShoppingCartFooterComponent,
     ItemResumeComponent,
-    ItemCreatorComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

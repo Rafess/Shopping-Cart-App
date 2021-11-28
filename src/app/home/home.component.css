@@ -1,0 +1,76 @@
+.main-wrapper {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-top: 88px;
+    padding-left: 5px;
+}
+.shop-title {
+    font-style: italic;
+    font-size: 43px;
+    font-weight: 300;
+    text-decoration: underline black;
+    margin-left: 10px;
+}
+.product-description {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    visibility: hidden;
+    background-color: #fff;
+    opacity: 90%;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    bottom: 304px;
+    transition: 0.3s ease-in;
+}
+.opaque {
+    opacity: 100%;
+}
+.product-wrapper:hover .product-description{
+    visibility: visible;
+    transform: scale(1.08);
+    border: 1px solid #000;
+}
+.list-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    width: 100%;
+    height: 100%;
+}
+.product-wrapper {
+    min-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+    max-width: 300px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+}
+.cart-button{
+    border: none;
+    background-color: #fff;
+}
+.shoppingCart-icon{
+    color: #000;
+    width: 40px;
+    height: 40px;
+    background: no-repeat;
+    opacity: 100%;
+}
+.cart-button:hover{
+    cursor: pointer;
+
+}

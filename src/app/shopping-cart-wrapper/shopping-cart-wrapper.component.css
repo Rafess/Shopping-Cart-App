@@ -1,3 +1,17 @@
-.main-section{
-    margin-top: 88px;
+.cart-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.main-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cart-title{
+    font-size: 45px;
+    font-style: italic;
+    font-weight: 500;
 }

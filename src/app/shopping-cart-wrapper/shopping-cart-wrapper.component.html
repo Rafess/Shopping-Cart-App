@@ -1,8 +1,13 @@
-<section class="main-section">
-    <app-item-resume
-      *ngFor="let item of itemList"
-      [name]="item.name"
-      [price]="item.price"
-      [description]="item.description"
-    ></app-item-resume>
+<section class="cart-section">
+    <h2 class="cart-title">Seu Carrinho</h2>
+    <main class="main-cart">
+        <div>
+            <p>Total de items: 
+                {{ totalAmount }}
+            </p>
+        </div>
+        <form>
+            informações do usuarios
+        </form>
+    </main>
 </section>
