@@ -24,7 +24,7 @@ export class LocalStorageService {
         const itemsFromLocalStorage = this.loadFromLocalStorage()
         itemsFromLocalStorage.forEach(products => products.amount = 0)    
         localStorage.setItem("selectedItems", JSON.stringify(itemsFromLocalStorage))
-    
         localStorage.removeItem("selectedItems")
+        localStorage.removeItem("productsInCart")
         }
       }

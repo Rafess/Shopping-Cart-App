@@ -56,7 +56,7 @@ export class ItemsService {
         }];
 
 selectedItems: any[] = [];
-
+productsInCart: any[] = [];
 constructor(private localStorageService: LocalStorageService) {
     this.selectedItems = localStorageService.loadFromLocalStorage()
 }
@@ -67,13 +67,18 @@ verifyItem(item: any): number {
 }
 addToCartList(item: any) {
     const indexOfItem = this.verifyItem(item)
-    if (indexOfItem >= 0) {
-        this.selectedItems[indexOfItem].amount += 1;
+    if (this.selectedItems.includes(item)) {
+        alert ("Item já adicionado");
+    } else { if (indexOfItem >= 0) {
+        this.selectedItems[indexOfItem].amount = 1;
     } else{
-        item.amount +=1
-        this.selectedItems.push(item)}
+        item.amount = 1;
+        this.selectedItems.push(item)
+    } }
+        console.log(item)
+        this.productsInCart.push(item);
         this.selectedItems = this.selectedItems.filter(product => product.amount !== 0)
-    
         this.localStorageService.addToLocalStorage(this.selectedItems)
+        this.localStorageService.addToLocalStorage(this.productsInCart)
       }
 }

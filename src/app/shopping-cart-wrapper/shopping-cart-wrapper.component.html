@@ -1,13 +1,58 @@
 <section class="cart-section">
-    <h2 class="cart-title">Seu Carrinho</h2>
+    <div class="info-wrapper">
+        <h2 class="cart-title">SEU CARRINHO</h2>
+        <p class="cart-info">
+            Total({{ totalAmount }} produto) {{totalPrice}}
+        </p>
+    </div>
     <main class="main-cart">
-        <div>
-            <p>Total de items: 
-                {{ totalAmount }}
-            </p>
-        </div>
-        <form>
-            informações do usuarios
-        </form>
+            <div class="product-divisor">
+                <div class="product-wrapper"  *ngFor="let product of itemsInCart">
+                    <div class="item-manager">    
+                    <img class="product-image"src="{{product.imageURL}}" alt="{{product.name}} image">
+                        <div class="product-description">
+                            <h3>{{product.name}}</h3>
+                            <p> R${{product.price}} </p>
+                            <select class="option-selector">
+                                <option #option1 (click)="updateAmount(option1)" value="1">1</option>
+                                <option #option2 (click)="updateAmount(option2)" value="2">2</option>
+                                <option #option3 (click)="updateAmount(option3)" value="3">3</option>
+                                <option #option4 (click)="updateAmount(option4)" value="4">4</option>
+                                <option #option5 (click)="updateAmount(option5)" value="5">5</option>
+                                <option #option6 (click)="updateAmount(option6)" value="6">6</option>
+                                <option #option7 (click)="updateAmount(option7)" value="7">7</option>
+                                <option #option8 (click)="updateAmount(option8)" value="8">8</option>
+                                <option #option9 (click)="updateAmount(option9)" value="9">9</option>
+                                <option #option10 (click)="updateAmount(option10)" value="10">10</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="userForm" class="user-form">
+                <div class="user-input form-group">
+                    <label for="user">Nome Completo</label>
+                    <input type="text" id="username" required formControlName="username">
+                </div>
+                <div *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+                    <div *ngIf="username?.errors?.['required']">O nome é obrigatório!!</div>
+                    <div *ngIf="username?.errors?.['minlength']">O nome precisa ter 3 letras!!</div>
+                </div>
+                <div class="user-input form-group">
+                    <label for="adress">Endereço Completo</label>
+                    <input type="text" id="adress"placeholder="Rua, Nº, Cidade/UF" required>
+                </div>
+                <div class="user-input form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required  placeholder="exemplo@exemplo.com" formControlName="email">
+                </div>
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                    <div *ngIf="email?.errors?.['required']">O email é obrigatório!</div>
+                    <div *ngIf="email?.errors?.['pattern']">O email precisa ter @!</div>
+                </div>
+                <button type="button" (click)="submit()" class="end-transaction"  [disabled]="!userForm.valid">Finalizar Compra</button>
+            </form>
+        
     </main>
 </section>

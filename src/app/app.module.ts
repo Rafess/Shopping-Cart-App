@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ShoppingCartHeaderComponent } from './shopping-cart-header/shopping-cart-header.component';
 import { ShoppingCartWrapperComponent } from './shopping-cart-wrapper/shopping-cart-wrapper.component';
 import { ShoppingCartFooterComponent } from './shopping-cart-footer/shopping-cart-footer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ItemResumeComponent } from './shopping-cart-wrapper/item-resume/item-resume.component';
 import { HomeComponent } from './home/home.component';
 const appRoutes: Routes = [
@@ -32,7 +32,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
