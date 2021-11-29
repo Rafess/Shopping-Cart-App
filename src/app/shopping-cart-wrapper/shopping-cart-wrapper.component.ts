@@ -22,7 +22,6 @@ export class ShoppingCartWrapperComponent implements OnInit {
   ngOnInit(): void{
     this.updateAmount(1);
     this.updatePrice();
-    this.localStorageService.loadFromLocalStorage
   };
 
   constructor(private localStorageService: LocalStorageService, private itemsService: ItemsService) {
